@@ -1,15 +1,17 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
+import {Tabs} from "./Tabs";
+import {Tab} from "./Tab";
 
 @Component({
     selector: 'hello-app',
+    directives: [Tabs, Tab],
     template: `
-        <h1>Hello, {{name}}!</h1>
-        Say hello to: <input [value]="name" (input)="name = $event.target.value">
+            <div tabs>
+                <div tab></div>
+            </div>
     `
 })
-export class HelloApp {
-    name: string = 'World';
-}
+export class HelloApp {}
 
 bootstrap(HelloApp);
